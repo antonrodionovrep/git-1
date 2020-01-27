@@ -1,0 +1,19 @@
+<a routerLink="/api/clients">Back</a>
+
+<div *ngIf="client">
+  <a routerLink="/api/clients/{{client.id}}/service" > Service</a>
+  <a routerLink="/api/clients/{{client.id}}/billingAcc" > Billing Account</a>
+  <br>
+  {{client.id}}
+  {{client.surname}}
+  {{client.name}}
+  {{client.patronymic}}
+  <br>
+  {{client.phoneNumber}}
+  <br>
+<!--  <a routerLink="/address/{{client.address.house.id}}}">Check Address</a>-->
+  {{client.address.house.city.name}}
+  {{client.address.house.street.name}}
+  {{client.address.house.houseNumber}}
+  {{client.address.flat}}
+</div>

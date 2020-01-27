@@ -1,0 +1,32 @@
+<button (click)="_authService.logout()">Logout</button>
+
+<p *ngIf = "_authService.hasRole('ROLE_ADMIN')"><a routerLink="../admin">Admin Panel</a></p>
+<p *ngIf = "_authService.hasRole('ROLE_MODER')"><a routerLink="../moder">Moderator Panel</a></p>
+
+<!--<p> <a routerLink="">Проверить адрес</a></p>-->
+<!--<p> <a routerLink="">Добавить клиента</a></p>-->
+
+<div class="container">
+  <table class="table table-striped">
+    <thead>
+    <th>Id</th>
+    <th>Surname</th>
+    <th>Name</th>
+    <th>Patronymic</th>
+    <th>PhoneNumber</th>
+    <th>Delete</th>
+    </thead>
+    <tbody>
+    <tr *ngFor="let client of clients">
+      <td><a [routerLink]="['/api/clients/' + client.id]" routerLinkActive="active"> {{client.id}}</a></td>
+      <td>{{client["surname"]}}</td>
+      <td>{{client["name"]}}</td>
+      <td>{{client["patronymic"]}}</td>
+      <td>{{client["phoneNumber"]}}</td>
+      <td>
+        <button class="btn btn-danger" (click)="deleteClient(client)">Delete</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>

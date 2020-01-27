@@ -1,0 +1,11 @@
+<a routerLink="">Создать биллинг-аккаунт</a>
+
+<div *ngIf="billingAccount">
+  <span>Биллинг-аккаунт №{{billingAccount.number}}</span>
+  <i>{{billingAccount.surname}}</i>
+  <i>{{billingAccount.name}}</i>
+  <i>{{billingAccount.patronymic}}</i>
+  <i>{{billingAccount.number}}</i>
+  <i>{{billingAccount.CVV}}</i>
+  <i>{{billingAccount.validDate}}</i>
+</div>
